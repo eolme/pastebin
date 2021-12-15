@@ -1,0 +1,115 @@
+.select-search {
+  width: 200px;
+  position: fixed;
+
+  top: 12px;
+  right: 12px;
+
+  z-index: 1;
+}
+
+.select-search__value {
+  position: relative;
+  z-index: 1;
+}
+
+.select-search__input {
+  display: block;
+  height: 36px;
+  width: 100%;
+  padding: 0 40px 0 16px;
+  color: #fff;
+  background: #575757;
+  border-radius: 3px;
+  outline: none;
+  text-align: left;
+  text-overflow: ellipsis;
+  line-height: 36px;
+  -webkit-appearance: none;
+}
+
+.select-search__input::-webkit-search-decoration,
+.select-search__input::-webkit-search-cancel-button,
+.select-search__input::-webkit-search-results-button,
+.select-search__input::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  display: none;
+}
+
+.select-search__select {
+  background: #575757;
+}
+
+.select-search__options {
+  list-style: none;
+}
+
+.select-search__option,
+.select-search__not-found {
+  display: block;
+  height: 36px;
+  width: 100%;
+  padding: 0 16px;
+  color: #fff;
+  background: #575757;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.select-search__option.is-selected,
+.select-search__option.is-highlighted.is-selected,
+.select-search__option.is-selected:hover {
+  background: #8a8a8a;
+  color: #fff;
+}
+
+.select-search__option.is-highlighted,
+.select-search__option:not(.is-selected):hover {
+  background: #686868;
+  color: #fff;
+}
+
+.select-search__input {
+  cursor: pointer;
+}
+
+.select-search .select-search__select {
+  position: absolute;
+  z-index: 2;
+  top: 44px;
+  right: 0;
+  left: 0;
+  border-radius: 3px;
+  max-height: 360px;
+
+  overflow-y: scroll;
+  overflow-y: overlay;
+
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+.select-search .select-search__select {
+  scrollbar-width: thin;
+  scrollbar-width: 8px;
+  scrollbar-color: #575757 #8a8a8a;
+}
+
+.select-search .select-search__select::-webkit-scrollbar,
+.select-search .select-search__select::-webkit-scrollbar-track {
+  width: 8px;
+  background-color: #575757;
+}
+.select-search .select-search__select::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #8a8a8a;
+}
+
+.select-search__not-found {
+  height: auto;
+  padding: 16px;
+  text-align: center;
+  color: #888;
+}

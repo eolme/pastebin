@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "extends": "@mntm",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "."
+  },
+  "rules": {
+    "no-return-assign": "off",
+    "sonarjs/no-duplicate-string": "off"
+  }
+}

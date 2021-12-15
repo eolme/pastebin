@@ -1,0 +1,48 @@
+body {
+  overflow: hidden;
+  overflow: clip;
+}
+
+.page {
+  font-family: -apple-system,BlinkMacSystemFont,"Product Sans","Google Sans","Noto Sans","Open Sans",system-ui,Roboto,RobotoDraft,"Helvetica Neue",Geneva,"Segoe Pro","Segoe UI",sans-serif;
+  font-size: 16px;
+  color: #ccc;
+  background-color: #2d2d2d;
+}
+
+.page {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow-y: scroll;
+  overflow-y: overlay;
+
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+.page {
+  scrollbar-width: thin;
+  scrollbar-width: 8px;
+  scrollbar-color: #575757 #2d2d2d;
+}
+
+.page::-webkit-scrollbar,
+.page::-webkit-scrollbar-track {
+  width: 8px;
+  background-color: #2d2d2d;
+}
+.page::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #575757;
+}
+
+::selection {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+

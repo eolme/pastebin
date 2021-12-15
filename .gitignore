@@ -1,0 +1,7 @@
+.DS_Store
+.eslintcache
+yarn.lock
+node_modules/
+.next/
+runtime/
+*.log
