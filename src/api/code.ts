@@ -1,10 +1,20 @@
 import type { GetServerSideProps, NextApiHandler } from 'next';
+import type { CodeModel, CodeTable } from '#/api/models/code';
 
-import { DI } from './di';
-import { nanoid } from 'nanoid';
+import { connect } from '#/api/supabase';
 
-export const props: GetServerSideProps = async (context) => {
-  const name = context.params.name as string;
+export const props: GetServerSideProps<CodeModel> = async (context) => {
+  if (!context.params || !context.params.name) {
+    return {
+      notFound: true
+    };
+  }
+
+  const name = context.params.name.toString();
+
+  const user = 'user' in context.req.headers ?
+    Number.parseInt(context.req.headers.user.toString(), 10) :
+    0;
 
   if (!name || name.length !== 32) {
     return {
@@ -12,20 +22,40 @@ export const props: GetServerSideProps = async (context) => {
     };
   }
 
-  const repo = await DI.code();
-  const model = await repo.findOrCreate(name, {
-    name,
-    code: '',
-    lang: 'plain'
-  });
+  const request = await connect.
+    from<CodeTable>('code').
+    select('owner, name, lang, code').
+    eq('name', name).
+    limit(1).
+    single();
+
+  if (request.error) {
+    return {
+      notFound: true
+    };
+  }
+
+  // Props must be plain object
+  const model: CodeModel = {
+    read: user !== request.body.owner,
+    code: request.body.code,
+    lang: request.body.lang,
+    name: request.body.name
+  };
 
   return {
-    // Props must be plain object
-    props: Object.assign({}, model)
+    props: model
   };
 };
 
 export const handle: NextApiHandler = async (req, res) => {
+  if (!req.body) {
+    res.writeHead(400);
+    res.end();
+
+    return;
+  }
+
   const {
     name = '',
     code = '',
@@ -39,26 +69,16 @@ export const handle: NextApiHandler = async (req, res) => {
     return;
   }
 
-  const repo = await DI.code();
-  const model = await repo.update(name, {
-    name,
-    code,
-    lang
-  });
+  // TODO
+  const model = {};
 
   res.writeHead(200);
   res.end(JSON.stringify(model));
 };
 
 export const create: NextApiHandler = async (req, res) => {
-  const name = nanoid(32);
-
-  const repo = await DI.code();
-  const model = await repo.instance({
-    name,
-    code: '',
-    lang: 'plain'
-  });
+  // TODO
+  const model = {};
 
   res.writeHead(201);
   res.end(JSON.stringify(model));

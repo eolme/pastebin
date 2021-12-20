@@ -21,11 +21,12 @@ const pickLang = (lang: string) => {
 };
 
 type EditorProps = {
+  read: boolean;
   code: string;
   lang: string;
 };
 
-export const Editor: FC<EditorProps> = ({ code, lang }) => {
+export const Editor: FC<EditorProps> = ({ read, code, lang }) => {
   const router = useRouter();
 
   const [value, handleValue] = useState(code);
@@ -52,6 +53,10 @@ export const Editor: FC<EditorProps> = ({ code, lang }) => {
   }, [lang]);
 
   const save = useMemoizedFn(async () => {
+    if (read) {
+      return;
+    }
+
     return request('/api/code', {
       name: router.query.name,
       lang: langRef.current,

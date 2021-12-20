@@ -1,23 +1,13 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
-
-@Entity()
-class Code {
-  @PrimaryColumn({
-    type: String,
-    length: 32
-  })
+export type CodeTable = {
+  owner: number;
   name: string;
-
-  @Column({
-    type: String,
-    length: 32
-  })
   lang: string;
-
-  @Column({
-    type: String
-  })
   code: string;
-}
+};
 
-export { Code };
+export type CodeModel = {
+  read: boolean;
+  name: string;
+  lang: string;
+  code: string;
+};

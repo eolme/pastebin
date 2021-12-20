@@ -56,7 +56,9 @@ aliases.addAliases(alias);
 const config = () => {
   return {
     env: {
-      NEXT_PUBLIC_HOST: 'https://pastebin.petrov.engineer'
+      NEXT_PUBLIC_HOST: 'https://pastebin.petrov.engineer',
+      NEXT_PUBLIC_REMOTE_HOST: 'https://aluhjtoyjpcudfdykqvx.supabase.co',
+      NEXT_PUBLIC_REMOTE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MDAwNjk3NiwiZXhwIjoxOTU1NTgyOTc2fQ._6V8huTMhHioYXgM4J-FYijHf9fnKQP_Y-KpSW1WlrQ'
     },
     webpack(webpack) {
       webpack.resolve = webpack.resolve || {};
@@ -72,7 +74,7 @@ const config = () => {
 
       if (cache && cache.framework) {
         cache.preact = Object.assign({}, cache.framework, {
-          test: /[/\\]node_modules[/\\](preact|preact-render-to-string|preact-context-provider)[/\\]/
+          test: /[/\\]node_modules[/\\](preact|preact-render-to-string|preact-context-provider|react-ssr-prepass)[/\\]/
         });
       }
 

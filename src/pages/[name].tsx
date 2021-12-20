@@ -1,11 +1,11 @@
 import type { GetServerSideProps, NextPage } from 'next';
-import type { Code } from '#/api/models/code';
+import type { CodeModel } from '#/api/models/code';
 
 import { useState } from 'react';
 
 import { Editor, Picker } from '#/components';
 
-const Name: NextPage<Code> = ({ code, lang: _lang }) => {
+const Name: NextPage<CodeModel> = ({ read, code, lang: _lang }) => {
   const [lang, handleLang] = useState(_lang);
 
   return (
@@ -15,6 +15,7 @@ const Name: NextPage<Code> = ({ code, lang: _lang }) => {
         onChange={handleLang}
       />
       <Editor
+        read={read}
         code={code}
         lang={lang}
       />
