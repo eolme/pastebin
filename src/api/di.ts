@@ -1,12 +1,12 @@
-import type { EntityTarget, ObjectID, Repository } from 'typeorm';
+import type { DeepPartial, EntityTarget, ObjectID, Repository } from 'typeorm';
 
 import { default as memo } from 'memoize-one';
 
 import { connect } from '#/api/database';
-import { Code } from '#/api/models/code';
+import { CodeEntity, UserEntity } from '#/api/entities';
 
 type EnhancedRepositoryMethods<T> = {
-  instance: (create: T) => Promise<T>;
+  createAndSave: (create: DeepPartial<T>) => Promise<T>;
   findOrCreate: (id: string | number | Date | ObjectID, create: T) => Promise<T>;
 };
 
@@ -14,10 +14,10 @@ type EnhancedRepository<T> = Repository<T> & EnhancedRepositoryMethods<T>;
 
 const enhance = <T>(repo: Repository<T>): EnhancedRepository<T> => {
   const methods: EnhancedRepositoryMethods<T> = {
-    async instance(create: T) {
+    async createAndSave(create) {
       return await repo.save(repo.create(create));
     },
-    async findOrCreate(id: string | number, create: T) {
+    async findOrCreate(id, create) {
       let model: T;
 
       try {
@@ -40,5 +40,6 @@ const repository = <T>(target: EntityTarget<T>) => {
 };
 
 export const DI = {
-  code: repository(Code)
+  code: repository(CodeEntity),
+  user: repository(UserEntity)
 } as const;

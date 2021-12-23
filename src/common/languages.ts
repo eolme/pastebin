@@ -912,1079 +912,1350 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
 
 export const options = [
   {
-    "name": "plain",
-    "value": "plain"
+    'name': 'plain',
+    'value': 'plain'
   },
   {
-    "name": "abap",
-    "value": "abap"
+    'name': 'abap',
+    'value': 'abap'
   },
   {
-    "name": "abnf",
-    "value": "abnf"
+    'name': 'abnf',
+    'value': 'abnf'
   },
   {
-    "name": "actionscript",
-    "value": "actionscript"
+    'name': 'actionscript',
+    'value': 'actionscript'
   },
   {
-    "name": "ada",
-    "value": "ada"
+    'name': 'ada',
+    'value': 'ada'
   },
   {
-    "name": "agda",
-    "value": "agda"
+    'name': 'agda',
+    'value': 'agda'
   },
   {
-    "name": "al",
-    "value": "al"
+    'name': 'al',
+    'value': 'al'
   },
   {
-    "name": "antlr4",
-    "value": "antlr4"
+    'name': 'antlr4',
+    'value': 'antlr4'
   },
   {
-    "name": "apacheconf",
-    "value": "apacheconf"
+    'name': 'apacheconf',
+    'value': 'apacheconf'
   },
   {
-    "name": "apex",
-    "value": "apex"
+    'name': 'apex',
+    'value': 'apex'
   },
   {
-    "name": "apl",
-    "value": "apl"
+    'name': 'apl',
+    'value': 'apl'
   },
   {
-    "name": "applescript",
-    "value": "applescript"
+    'name': 'applescript',
+    'value': 'applescript'
   },
   {
-    "name": "aql",
-    "value": "aql"
+    'name': 'aql',
+    'value': 'aql'
   },
   {
-    "name": "arduino",
-    "value": "arduino"
+    'name': 'arduino',
+    'value': 'arduino'
   },
   {
-    "name": "arff",
-    "value": "arff"
+    'name': 'arff',
+    'value': 'arff'
   },
   {
-    "name": "asciidoc",
-    "value": "asciidoc"
+    'name': 'asciidoc',
+    'value': 'asciidoc'
   },
   {
-    "name": "asm6502",
-    "value": "asm6502"
+    'name': 'asm6502',
+    'value': 'asm6502'
   },
   {
-    "name": "aspnet",
-    "value": "aspnet"
+    'name': 'aspnet',
+    'value': 'aspnet'
   },
   {
-    "name": "autohotkey",
-    "value": "autohotkey"
+    'name': 'autohotkey',
+    'value': 'autohotkey'
   },
   {
-    "name": "autoit",
-    "value": "autoit"
+    'name': 'autoit',
+    'value': 'autoit'
   },
   {
-    "name": "avisynth",
-    "value": "avisynth"
+    'name': 'avisynth',
+    'value': 'avisynth'
   },
   {
-    "name": "avro-idl",
-    "value": "avro-idl"
+    'name': 'avro-idl',
+    'value': 'avro-idl'
   },
   {
-    "name": "bash",
-    "value": "bash"
+    'name': 'bash',
+    'value': 'bash'
   },
   {
-    "name": "basic",
-    "value": "basic"
+    'name': 'basic',
+    'value': 'basic'
   },
   {
-    "name": "batch",
-    "value": "batch"
+    'name': 'batch',
+    'value': 'batch'
   },
   {
-    "name": "bicep",
-    "value": "bicep"
+    'name': 'bicep',
+    'value': 'bicep'
   },
   {
-    "name": "birb",
-    "value": "birb"
+    'name': 'birb',
+    'value': 'birb'
   },
   {
-    "name": "bison",
-    "value": "bison"
+    'name': 'bison',
+    'value': 'bison'
   },
   {
-    "name": "bnf",
-    "value": "bnf"
+    'name': 'bnf',
+    'value': 'bnf'
   },
   {
-    "name": "brainfuck",
-    "value": "brainfuck"
+    'name': 'brainfuck',
+    'value': 'brainfuck'
   },
   {
-    "name": "brightscript",
-    "value": "brightscript"
+    'name': 'brightscript',
+    'value': 'brightscript'
   },
   {
-    "name": "bro",
-    "value": "bro"
+    'name': 'bro',
+    'value': 'bro'
   },
   {
-    "name": "bsl",
-    "value": "bsl"
+    'name': 'bsl',
+    'value': 'bsl'
   },
   {
-    "name": "c",
-    "value": "c"
+    'name': 'c',
+    'value': 'c'
   },
   {
-    "name": "cfscript",
-    "value": "cfscript"
+    'name': 'cfscript',
+    'value': 'cfscript'
   },
   {
-    "name": "chaiscript",
-    "value": "chaiscript"
+    'name': 'chaiscript',
+    'value': 'chaiscript'
   },
   {
-    "name": "cil",
-    "value": "cil"
+    'name': 'cil',
+    'value': 'cil'
   },
   {
-    "name": "clike",
-    "value": "clike"
+    'name': 'clike',
+    'value': 'clike'
   },
   {
-    "name": "clojure",
-    "value": "clojure"
+    'name': 'clojure',
+    'value': 'clojure'
   },
   {
-    "name": "cmake",
-    "value": "cmake"
+    'name': 'cmake',
+    'value': 'cmake'
   },
   {
-    "name": "cobol",
-    "value": "cobol"
+    'name': 'cobol',
+    'value': 'cobol'
   },
   {
-    "name": "coffeescript",
-    "value": "coffeescript"
+    'name': 'coffeescript',
+    'value': 'coffeescript'
   },
   {
-    "name": "concurnas",
-    "value": "concurnas"
+    'name': 'concurnas',
+    'value': 'concurnas'
   },
   {
-    "name": "coq",
-    "value": "coq"
+    'name': 'coq',
+    'value': 'coq'
   },
   {
-    "name": "core",
-    "value": "core"
+    'name': 'core',
+    'value': 'core'
   },
   {
-    "name": "cpp",
-    "value": "cpp"
+    'name': 'cpp',
+    'value': 'cpp'
   },
   {
-    "name": "crystal",
-    "value": "crystal"
+    'name': 'crystal',
+    'value': 'crystal'
   },
   {
-    "name": "csharp",
-    "value": "csharp"
+    'name': 'csharp',
+    'value': 'csharp'
   },
   {
-    "name": "cshtml",
-    "value": "cshtml"
+    'name': 'cshtml',
+    'value': 'cshtml'
   },
   {
-    "name": "csp",
-    "value": "csp"
+    'name': 'csp',
+    'value': 'csp'
   },
   {
-    "name": "css-extras",
-    "value": "css-extras"
+    'name': 'css-extras',
+    'value': 'css-extras'
   },
   {
-    "name": "css",
-    "value": "css"
+    'name': 'css',
+    'value': 'css'
   },
   {
-    "name": "csv",
-    "value": "csv"
+    'name': 'csv',
+    'value': 'csv'
   },
   {
-    "name": "cypher",
-    "value": "cypher"
+    'name': 'cypher',
+    'value': 'cypher'
   },
   {
-    "name": "d",
-    "value": "d"
+    'name': 'd',
+    'value': 'd'
   },
   {
-    "name": "dart",
-    "value": "dart"
+    'name': 'dart',
+    'value': 'dart'
   },
   {
-    "name": "dataweave",
-    "value": "dataweave"
+    'name': 'dataweave',
+    'value': 'dataweave'
   },
   {
-    "name": "dax",
-    "value": "dax"
+    'name': 'dax',
+    'value': 'dax'
   },
   {
-    "name": "dhall",
-    "value": "dhall"
+    'name': 'dhall',
+    'value': 'dhall'
   },
   {
-    "name": "diff",
-    "value": "diff"
+    'name': 'diff',
+    'value': 'diff'
   },
   {
-    "name": "django",
-    "value": "django"
+    'name': 'django',
+    'value': 'django'
   },
   {
-    "name": "dns-zone-file",
-    "value": "dns-zone-file"
+    'name': 'dns-zone-file',
+    'value': 'dns-zone-file'
   },
   {
-    "name": "docker",
-    "value": "docker"
+    'name': 'docker',
+    'value': 'docker'
   },
   {
-    "name": "dot",
-    "value": "dot"
+    'name': 'dot',
+    'value': 'dot'
   },
   {
-    "name": "ebnf",
-    "value": "ebnf"
+    'name': 'ebnf',
+    'value': 'ebnf'
   },
   {
-    "name": "editorconfig",
-    "value": "editorconfig"
+    'name': 'editorconfig',
+    'value': 'editorconfig'
   },
   {
-    "name": "eiffel",
-    "value": "eiffel"
+    'name': 'eiffel',
+    'value': 'eiffel'
   },
   {
-    "name": "ejs",
-    "value": "ejs"
+    'name': 'ejs',
+    'value': 'ejs'
   },
   {
-    "name": "elixir",
-    "value": "elixir"
+    'name': 'elixir',
+    'value': 'elixir'
   },
   {
-    "name": "elm",
-    "value": "elm"
+    'name': 'elm',
+    'value': 'elm'
   },
   {
-    "name": "erb",
-    "value": "erb"
+    'name': 'erb',
+    'value': 'erb'
   },
   {
-    "name": "erlang",
-    "value": "erlang"
+    'name': 'erlang',
+    'value': 'erlang'
   },
   {
-    "name": "etlua",
-    "value": "etlua"
+    'name': 'etlua',
+    'value': 'etlua'
   },
   {
-    "name": "excel-formula",
-    "value": "excel-formula"
+    'name': 'excel-formula',
+    'value': 'excel-formula'
   },
   {
-    "name": "factor",
-    "value": "factor"
+    'name': 'factor',
+    'value': 'factor'
   },
   {
-    "name": "false",
-    "value": "false"
+    'name': 'false',
+    'value': 'false'
   },
   {
-    "name": "firestore-security-rules",
-    "value": "firestore-security-rules"
+    'name': 'firestore-security-rules',
+    'value': 'firestore-security-rules'
   },
   {
-    "name": "flow",
-    "value": "flow"
+    'name': 'flow',
+    'value': 'flow'
   },
   {
-    "name": "fortran",
-    "value": "fortran"
+    'name': 'fortran',
+    'value': 'fortran'
   },
   {
-    "name": "fsharp",
-    "value": "fsharp"
+    'name': 'fsharp',
+    'value': 'fsharp'
   },
   {
-    "name": "ftl",
-    "value": "ftl"
+    'name': 'ftl',
+    'value': 'ftl'
   },
   {
-    "name": "gap",
-    "value": "gap"
+    'name': 'gap',
+    'value': 'gap'
   },
   {
-    "name": "gdscript",
-    "value": "gdscript"
+    'name': 'gdscript',
+    'value': 'gdscript'
   },
   {
-    "name": "gedcom",
-    "value": "gedcom"
+    'name': 'gedcom',
+    'value': 'gedcom'
   },
   {
-    "name": "gherkin",
-    "value": "gherkin"
+    'name': 'gherkin',
+    'value': 'gherkin'
   },
   {
-    "name": "git",
-    "value": "git"
+    'name': 'git',
+    'value': 'git'
   },
   {
-    "name": "glsl",
-    "value": "glsl"
+    'name': 'glsl',
+    'value': 'glsl'
   },
   {
-    "name": "gml",
-    "value": "gml"
+    'name': 'gml',
+    'value': 'gml'
   },
   {
-    "name": "gn",
-    "value": "gn"
+    'name': 'gn',
+    'value': 'gn'
   },
   {
-    "name": "go",
-    "value": "go"
+    'name': 'go',
+    'value': 'go'
   },
   {
-    "name": "graphql",
-    "value": "graphql"
+    'name': 'graphql',
+    'value': 'graphql'
   },
   {
-    "name": "groovy",
-    "value": "groovy"
+    'name': 'groovy',
+    'value': 'groovy'
   },
   {
-    "name": "haml",
-    "value": "haml"
+    'name': 'haml',
+    'value': 'haml'
   },
   {
-    "name": "handlebars",
-    "value": "handlebars"
+    'name': 'handlebars',
+    'value': 'handlebars'
   },
   {
-    "name": "haskell",
-    "value": "haskell"
+    'name': 'haskell',
+    'value': 'haskell'
   },
   {
-    "name": "haxe",
-    "value": "haxe"
+    'name': 'haxe',
+    'value': 'haxe'
   },
   {
-    "name": "hcl",
-    "value": "hcl"
+    'name': 'hcl',
+    'value': 'hcl'
   },
   {
-    "name": "hlsl",
-    "value": "hlsl"
+    'name': 'hlsl',
+    'value': 'hlsl'
   },
   {
-    "name": "hoon",
-    "value": "hoon"
+    'name': 'hoon',
+    'value': 'hoon'
   },
   {
-    "name": "hpkp",
-    "value": "hpkp"
+    'name': 'hpkp',
+    'value': 'hpkp'
   },
   {
-    "name": "hsts",
-    "value": "hsts"
+    'name': 'hsts',
+    'value': 'hsts'
   },
   {
-    "name": "http",
-    "value": "http"
+    'name': 'http',
+    'value': 'http'
   },
   {
-    "name": "ichigojam",
-    "value": "ichigojam"
+    'name': 'ichigojam',
+    'value': 'ichigojam'
   },
   {
-    "name": "icon",
-    "value": "icon"
+    'name': 'icon',
+    'value': 'icon'
   },
   {
-    "name": "icu-message-format",
-    "value": "icu-message-format"
+    'name': 'icu-message-format',
+    'value': 'icu-message-format'
   },
   {
-    "name": "idris",
-    "value": "idris"
+    'name': 'idris',
+    'value': 'idris'
   },
   {
-    "name": "iecst",
-    "value": "iecst"
+    'name': 'iecst',
+    'value': 'iecst'
   },
   {
-    "name": "ignore",
-    "value": "ignore"
+    'name': 'ignore',
+    'value': 'ignore'
   },
   {
-    "name": "inform7",
-    "value": "inform7"
+    'name': 'inform7',
+    'value': 'inform7'
   },
   {
-    "name": "ini",
-    "value": "ini"
+    'name': 'ini',
+    'value': 'ini'
   },
   {
-    "name": "io",
-    "value": "io"
+    'name': 'io',
+    'value': 'io'
   },
   {
-    "name": "j",
-    "value": "j"
+    'name': 'j',
+    'value': 'j'
   },
   {
-    "name": "java",
-    "value": "java"
+    'name': 'java',
+    'value': 'java'
   },
   {
-    "name": "javadoc",
-    "value": "javadoc"
+    'name': 'javadoc',
+    'value': 'javadoc'
   },
   {
-    "name": "javadoclike",
-    "value": "javadoclike"
+    'name': 'javadoclike',
+    'value': 'javadoclike'
   },
   {
-    "name": "javascript",
-    "value": "javascript"
+    'name': 'javascript',
+    'value': 'javascript'
   },
   {
-    "name": "javastacktrace",
-    "value": "javastacktrace"
+    'name': 'javastacktrace',
+    'value': 'javastacktrace'
   },
   {
-    "name": "jexl",
-    "value": "jexl"
+    'name': 'jexl',
+    'value': 'jexl'
   },
   {
-    "name": "jolie",
-    "value": "jolie"
+    'name': 'jolie',
+    'value': 'jolie'
   },
   {
-    "name": "jq",
-    "value": "jq"
+    'name': 'jq',
+    'value': 'jq'
   },
   {
-    "name": "js-extras",
-    "value": "js-extras"
+    'name': 'js-extras',
+    'value': 'js-extras'
   },
   {
-    "name": "js-templates",
-    "value": "js-templates"
+    'name': 'js-templates',
+    'value': 'js-templates'
   },
   {
-    "name": "jsdoc",
-    "value": "jsdoc"
+    'name': 'jsdoc',
+    'value': 'jsdoc'
   },
   {
-    "name": "json",
-    "value": "json"
+    'name': 'json',
+    'value': 'json'
   },
   {
-    "name": "json5",
-    "value": "json5"
+    'name': 'json5',
+    'value': 'json5'
   },
   {
-    "name": "jsonp",
-    "value": "jsonp"
+    'name': 'jsonp',
+    'value': 'jsonp'
   },
   {
-    "name": "jsstacktrace",
-    "value": "jsstacktrace"
+    'name': 'jsstacktrace',
+    'value': 'jsstacktrace'
   },
   {
-    "name": "jsx",
-    "value": "jsx"
+    'name': 'jsx',
+    'value': 'jsx'
   },
   {
-    "name": "julia",
-    "value": "julia"
+    'name': 'julia',
+    'value': 'julia'
   },
   {
-    "name": "keyman",
-    "value": "keyman"
+    'name': 'keyman',
+    'value': 'keyman'
   },
   {
-    "name": "kotlin",
-    "value": "kotlin"
+    'name': 'kotlin',
+    'value': 'kotlin'
   },
   {
-    "name": "kumir",
-    "value": "kumir"
+    'name': 'kumir',
+    'value': 'kumir'
   },
   {
-    "name": "kusto",
-    "value": "kusto"
+    'name': 'kusto',
+    'value': 'kusto'
   },
   {
-    "name": "latex",
-    "value": "latex"
+    'name': 'latex',
+    'value': 'latex'
   },
   {
-    "name": "latte",
-    "value": "latte"
+    'name': 'latte',
+    'value': 'latte'
   },
   {
-    "name": "less",
-    "value": "less"
+    'name': 'less',
+    'value': 'less'
   },
   {
-    "name": "lilypond",
-    "value": "lilypond"
+    'name': 'lilypond',
+    'value': 'lilypond'
   },
   {
-    "name": "liquid",
-    "value": "liquid"
+    'name': 'liquid',
+    'value': 'liquid'
   },
   {
-    "name": "lisp",
-    "value": "lisp"
+    'name': 'lisp',
+    'value': 'lisp'
   },
   {
-    "name": "livescript",
-    "value": "livescript"
+    'name': 'livescript',
+    'value': 'livescript'
   },
   {
-    "name": "llvm",
-    "value": "llvm"
+    'name': 'llvm',
+    'value': 'llvm'
   },
   {
-    "name": "log",
-    "value": "log"
+    'name': 'log',
+    'value': 'log'
   },
   {
-    "name": "lua",
-    "value": "lua"
+    'name': 'lua',
+    'value': 'lua'
   },
   {
-    "name": "magma",
-    "value": "magma"
+    'name': 'magma',
+    'value': 'magma'
   },
   {
-    "name": "makefile",
-    "value": "makefile"
+    'name': 'makefile',
+    'value': 'makefile'
   },
   {
-    "name": "markdown",
-    "value": "markdown"
+    'name': 'markdown',
+    'value': 'markdown'
   },
   {
-    "name": "markup-templating",
-    "value": "markup-templating"
+    'name': 'markup-templating',
+    'value': 'markup-templating'
   },
   {
-    "name": "markup",
-    "value": "markup"
+    'name': 'markup',
+    'value': 'markup'
   },
   {
-    "name": "matlab",
-    "value": "matlab"
+    'name': 'matlab',
+    'value': 'matlab'
   },
   {
-    "name": "maxscript",
-    "value": "maxscript"
+    'name': 'maxscript',
+    'value': 'maxscript'
   },
   {
-    "name": "mel",
-    "value": "mel"
+    'name': 'mel',
+    'value': 'mel'
   },
   {
-    "name": "mermaid",
-    "value": "mermaid"
+    'name': 'mermaid',
+    'value': 'mermaid'
   },
   {
-    "name": "mizar",
-    "value": "mizar"
+    'name': 'mizar',
+    'value': 'mizar'
   },
   {
-    "name": "mongodb",
-    "value": "mongodb"
+    'name': 'mongodb',
+    'value': 'mongodb'
   },
   {
-    "name": "monkey",
-    "value": "monkey"
+    'name': 'monkey',
+    'value': 'monkey'
   },
   {
-    "name": "moonscript",
-    "value": "moonscript"
+    'name': 'moonscript',
+    'value': 'moonscript'
   },
   {
-    "name": "n1ql",
-    "value": "n1ql"
+    'name': 'n1ql',
+    'value': 'n1ql'
   },
   {
-    "name": "n4js",
-    "value": "n4js"
+    'name': 'n4js',
+    'value': 'n4js'
   },
   {
-    "name": "nand2tetris-hdl",
-    "value": "nand2tetris-hdl"
+    'name': 'nand2tetris-hdl',
+    'value': 'nand2tetris-hdl'
   },
   {
-    "name": "naniscript",
-    "value": "naniscript"
+    'name': 'naniscript',
+    'value': 'naniscript'
   },
   {
-    "name": "nasm",
-    "value": "nasm"
+    'name': 'nasm',
+    'value': 'nasm'
   },
   {
-    "name": "neon",
-    "value": "neon"
+    'name': 'neon',
+    'value': 'neon'
   },
   {
-    "name": "nevod",
-    "value": "nevod"
+    'name': 'nevod',
+    'value': 'nevod'
   },
   {
-    "name": "nginx",
-    "value": "nginx"
+    'name': 'nginx',
+    'value': 'nginx'
   },
   {
-    "name": "nim",
-    "value": "nim"
+    'name': 'nim',
+    'value': 'nim'
   },
   {
-    "name": "nix",
-    "value": "nix"
+    'name': 'nix',
+    'value': 'nix'
   },
   {
-    "name": "nsis",
-    "value": "nsis"
+    'name': 'nsis',
+    'value': 'nsis'
   },
   {
-    "name": "objectivec",
-    "value": "objectivec"
+    'name': 'objectivec',
+    'value': 'objectivec'
   },
   {
-    "name": "ocaml",
-    "value": "ocaml"
+    'name': 'ocaml',
+    'value': 'ocaml'
   },
   {
-    "name": "opencl",
-    "value": "opencl"
+    'name': 'opencl',
+    'value': 'opencl'
   },
   {
-    "name": "openqasm",
-    "value": "openqasm"
+    'name': 'openqasm',
+    'value': 'openqasm'
   },
   {
-    "name": "oz",
-    "value": "oz"
+    'name': 'oz',
+    'value': 'oz'
   },
   {
-    "name": "parigp",
-    "value": "parigp"
+    'name': 'parigp',
+    'value': 'parigp'
   },
   {
-    "name": "parser",
-    "value": "parser"
+    'name': 'parser',
+    'value': 'parser'
   },
   {
-    "name": "pascal",
-    "value": "pascal"
+    'name': 'pascal',
+    'value': 'pascal'
   },
   {
-    "name": "pascaligo",
-    "value": "pascaligo"
+    'name': 'pascaligo',
+    'value': 'pascaligo'
   },
   {
-    "name": "pcaxis",
-    "value": "pcaxis"
+    'name': 'pcaxis',
+    'value': 'pcaxis'
   },
   {
-    "name": "perl",
-    "value": "perl"
+    'name': 'perl',
+    'value': 'perl'
   },
   {
-    "name": "php-extras",
-    "value": "php-extras"
+    'name': 'php-extras',
+    'value': 'php-extras'
   },
   {
-    "name": "php",
-    "value": "php"
+    'name': 'php',
+    'value': 'php'
   },
   {
-    "name": "phpdoc",
-    "value": "phpdoc"
+    'name': 'phpdoc',
+    'value': 'phpdoc'
   },
   {
-    "name": "plsql",
-    "value": "plsql"
+    'name': 'plsql',
+    'value': 'plsql'
   },
   {
-    "name": "powerquery",
-    "value": "powerquery"
+    'name': 'powerquery',
+    'value': 'powerquery'
   },
   {
-    "name": "powershell",
-    "value": "powershell"
+    'name': 'powershell',
+    'value': 'powershell'
   },
   {
-    "name": "processing",
-    "value": "processing"
+    'name': 'processing',
+    'value': 'processing'
   },
   {
-    "name": "prolog",
-    "value": "prolog"
+    'name': 'prolog',
+    'value': 'prolog'
   },
   {
-    "name": "promql",
-    "value": "promql"
+    'name': 'promql',
+    'value': 'promql'
   },
   {
-    "name": "properties",
-    "value": "properties"
+    'name': 'properties',
+    'value': 'properties'
   },
   {
-    "name": "protobuf",
-    "value": "protobuf"
+    'name': 'protobuf',
+    'value': 'protobuf'
   },
   {
-    "name": "psl",
-    "value": "psl"
+    'name': 'psl',
+    'value': 'psl'
   },
   {
-    "name": "pug",
-    "value": "pug"
+    'name': 'pug',
+    'value': 'pug'
   },
   {
-    "name": "puppet",
-    "value": "puppet"
+    'name': 'puppet',
+    'value': 'puppet'
   },
   {
-    "name": "pure",
-    "value": "pure"
+    'name': 'pure',
+    'value': 'pure'
   },
   {
-    "name": "purebasic",
-    "value": "purebasic"
+    'name': 'purebasic',
+    'value': 'purebasic'
   },
   {
-    "name": "purescript",
-    "value": "purescript"
+    'name': 'purescript',
+    'value': 'purescript'
   },
   {
-    "name": "python",
-    "value": "python"
+    'name': 'python',
+    'value': 'python'
   },
   {
-    "name": "q",
-    "value": "q"
+    'name': 'q',
+    'value': 'q'
   },
   {
-    "name": "qml",
-    "value": "qml"
+    'name': 'qml',
+    'value': 'qml'
   },
   {
-    "name": "qore",
-    "value": "qore"
+    'name': 'qore',
+    'value': 'qore'
   },
   {
-    "name": "qsharp",
-    "value": "qsharp"
+    'name': 'qsharp',
+    'value': 'qsharp'
   },
   {
-    "name": "r",
-    "value": "r"
+    'name': 'r',
+    'value': 'r'
   },
   {
-    "name": "racket",
-    "value": "racket"
+    'name': 'racket',
+    'value': 'racket'
   },
   {
-    "name": "reason",
-    "value": "reason"
+    'name': 'reason',
+    'value': 'reason'
   },
   {
-    "name": "regex",
-    "value": "regex"
+    'name': 'regex',
+    'value': 'regex'
   },
   {
-    "name": "rego",
-    "value": "rego"
+    'name': 'rego',
+    'value': 'rego'
   },
   {
-    "name": "renpy",
-    "value": "renpy"
+    'name': 'renpy',
+    'value': 'renpy'
   },
   {
-    "name": "rest",
-    "value": "rest"
+    'name': 'rest',
+    'value': 'rest'
   },
   {
-    "name": "rip",
-    "value": "rip"
+    'name': 'rip',
+    'value': 'rip'
   },
   {
-    "name": "roboconf",
-    "value": "roboconf"
+    'name': 'roboconf',
+    'value': 'roboconf'
   },
   {
-    "name": "robotframework",
-    "value": "robotframework"
+    'name': 'robotframework',
+    'value': 'robotframework'
   },
   {
-    "name": "ruby",
-    "value": "ruby"
+    'name': 'ruby',
+    'value': 'ruby'
   },
   {
-    "name": "rust",
-    "value": "rust"
+    'name': 'rust',
+    'value': 'rust'
   },
   {
-    "name": "sas",
-    "value": "sas"
+    'name': 'sas',
+    'value': 'sas'
   },
   {
-    "name": "sass",
-    "value": "sass"
+    'name': 'sass',
+    'value': 'sass'
   },
   {
-    "name": "scala",
-    "value": "scala"
+    'name': 'scala',
+    'value': 'scala'
   },
   {
-    "name": "scheme",
-    "value": "scheme"
+    'name': 'scheme',
+    'value': 'scheme'
   },
   {
-    "name": "scss",
-    "value": "scss"
+    'name': 'scss',
+    'value': 'scss'
   },
   {
-    "name": "shell-session",
-    "value": "shell-session"
+    'name': 'shell-session',
+    'value': 'shell-session'
   },
   {
-    "name": "smali",
-    "value": "smali"
+    'name': 'smali',
+    'value': 'smali'
   },
   {
-    "name": "smalltalk",
-    "value": "smalltalk"
+    'name': 'smalltalk',
+    'value': 'smalltalk'
   },
   {
-    "name": "smarty",
-    "value": "smarty"
+    'name': 'smarty',
+    'value': 'smarty'
   },
   {
-    "name": "sml",
-    "value": "sml"
+    'name': 'sml',
+    'value': 'sml'
   },
   {
-    "name": "solidity",
-    "value": "solidity"
+    'name': 'solidity',
+    'value': 'solidity'
   },
   {
-    "name": "solution-file",
-    "value": "solution-file"
+    'name': 'solution-file',
+    'value': 'solution-file'
   },
   {
-    "name": "soy",
-    "value": "soy"
+    'name': 'soy',
+    'value': 'soy'
   },
   {
-    "name": "sparql",
-    "value": "sparql"
+    'name': 'sparql',
+    'value': 'sparql'
   },
   {
-    "name": "splunk-spl",
-    "value": "splunk-spl"
+    'name': 'splunk-spl',
+    'value': 'splunk-spl'
   },
   {
-    "name": "sqf",
-    "value": "sqf"
+    'name': 'sqf',
+    'value': 'sqf'
   },
   {
-    "name": "sql",
-    "value": "sql"
+    'name': 'sql',
+    'value': 'sql'
   },
   {
-    "name": "squirrel",
-    "value": "squirrel"
+    'name': 'squirrel',
+    'value': 'squirrel'
   },
   {
-    "name": "stan",
-    "value": "stan"
+    'name': 'stan',
+    'value': 'stan'
   },
   {
-    "name": "stylus",
-    "value": "stylus"
+    'name': 'stylus',
+    'value': 'stylus'
   },
   {
-    "name": "swift",
-    "value": "swift"
+    'name': 'swift',
+    'value': 'swift'
   },
   {
-    "name": "systemd",
-    "value": "systemd"
+    'name': 'systemd',
+    'value': 'systemd'
   },
   {
-    "name": "t4-cs",
-    "value": "t4-cs"
+    'name': 't4-cs',
+    'value': 't4-cs'
   },
   {
-    "name": "t4-templating",
-    "value": "t4-templating"
+    'name': 't4-templating',
+    'value': 't4-templating'
   },
   {
-    "name": "t4-vb",
-    "value": "t4-vb"
+    'name': 't4-vb',
+    'value': 't4-vb'
   },
   {
-    "name": "tap",
-    "value": "tap"
+    'name': 'tap',
+    'value': 'tap'
   },
   {
-    "name": "tcl",
-    "value": "tcl"
+    'name': 'tcl',
+    'value': 'tcl'
   },
   {
-    "name": "textile",
-    "value": "textile"
+    'name': 'textile',
+    'value': 'textile'
   },
   {
-    "name": "toml",
-    "value": "toml"
+    'name': 'toml',
+    'value': 'toml'
   },
   {
-    "name": "tsx",
-    "value": "tsx"
+    'name': 'tsx',
+    'value': 'tsx'
   },
   {
-    "name": "tt2",
-    "value": "tt2"
+    'name': 'tt2',
+    'value': 'tt2'
   },
   {
-    "name": "turtle",
-    "value": "turtle"
+    'name': 'turtle',
+    'value': 'turtle'
   },
   {
-    "name": "twig",
-    "value": "twig"
+    'name': 'twig',
+    'value': 'twig'
   },
   {
-    "name": "typescript",
-    "value": "typescript"
+    'name': 'typescript',
+    'value': 'typescript'
   },
   {
-    "name": "typoscript",
-    "value": "typoscript"
+    'name': 'typoscript',
+    'value': 'typoscript'
   },
   {
-    "name": "unrealscript",
-    "value": "unrealscript"
+    'name': 'unrealscript',
+    'value': 'unrealscript'
   },
   {
-    "name": "uri",
-    "value": "uri"
+    'name': 'uri',
+    'value': 'uri'
   },
   {
-    "name": "v",
-    "value": "v"
+    'name': 'v',
+    'value': 'v'
   },
   {
-    "name": "vala",
-    "value": "vala"
+    'name': 'vala',
+    'value': 'vala'
   },
   {
-    "name": "vbnet",
-    "value": "vbnet"
+    'name': 'vbnet',
+    'value': 'vbnet'
   },
   {
-    "name": "velocity",
-    "value": "velocity"
+    'name': 'velocity',
+    'value': 'velocity'
   },
   {
-    "name": "verilog",
-    "value": "verilog"
+    'name': 'verilog',
+    'value': 'verilog'
   },
   {
-    "name": "vhdl",
-    "value": "vhdl"
+    'name': 'vhdl',
+    'value': 'vhdl'
   },
   {
-    "name": "vim",
-    "value": "vim"
+    'name': 'vim',
+    'value': 'vim'
   },
   {
-    "name": "visual-basic",
-    "value": "visual-basic"
+    'name': 'visual-basic',
+    'value': 'visual-basic'
   },
   {
-    "name": "warpscript",
-    "value": "warpscript"
+    'name': 'warpscript',
+    'value': 'warpscript'
   },
   {
-    "name": "wasm",
-    "value": "wasm"
+    'name': 'wasm',
+    'value': 'wasm'
   },
   {
-    "name": "wiki",
-    "value": "wiki"
+    'name': 'wiki',
+    'value': 'wiki'
   },
   {
-    "name": "wolfram",
-    "value": "wolfram"
+    'name': 'wolfram',
+    'value': 'wolfram'
   },
   {
-    "name": "wren",
-    "value": "wren"
+    'name': 'wren',
+    'value': 'wren'
   },
   {
-    "name": "xeora",
-    "value": "xeora"
+    'name': 'xeora',
+    'value': 'xeora'
   },
   {
-    "name": "xml-doc",
-    "value": "xml-doc"
+    'name': 'xml-doc',
+    'value': 'xml-doc'
   },
   {
-    "name": "xojo",
-    "value": "xojo"
+    'name': 'xojo',
+    'value': 'xojo'
   },
   {
-    "name": "xquery",
-    "value": "xquery"
+    'name': 'xquery',
+    'value': 'xquery'
   },
   {
-    "name": "yaml",
-    "value": "yaml"
+    'name': 'yaml',
+    'value': 'yaml'
   },
   {
-    "name": "yang",
-    "value": "yang"
+    'name': 'yang',
+    'value': 'yang'
   },
   {
-    "name": "zig",
-    "value": "zig"
+    'name': 'zig',
+    'value': 'zig'
   }
-]
+];
+
+export type Languages =
+  'abap' |
+  'abnf' |
+  'actionscript' |
+  'ada' |
+  'agda' |
+  'al' |
+  'antlr4' |
+  'apacheconf' |
+  'apex' |
+  'apl' |
+  'applescript' |
+  'aql' |
+  'arduino' |
+  'arff' |
+  'asciidoc' |
+  'asm6502' |
+  'aspnet' |
+  'autohotkey' |
+  'autoit' |
+  'avisynth' |
+  'avro-idl' |
+  'bash' |
+  'basic' |
+  'batch' |
+  'bicep' |
+  'birb' |
+  'bison' |
+  'bnf' |
+  'brainfuck' |
+  'brightscript' |
+  'bro' |
+  'bsl' |
+  'c' |
+  'cfscript' |
+  'chaiscript' |
+  'cil' |
+  'clike' |
+  'clojure' |
+  'cmake' |
+  'cobol' |
+  'coffeescript' |
+  'concurnas' |
+  'coq' |
+  'core' |
+  'cpp' |
+  'crystal' |
+  'csharp' |
+  'cshtml' |
+  'csp' |
+  'css-extras' |
+  'css' |
+  'csv' |
+  'cypher' |
+  'd' |
+  'dart' |
+  'dataweave' |
+  'dax' |
+  'dhall' |
+  'diff' |
+  'django' |
+  'dns-zone-file' |
+  'docker' |
+  'dot' |
+  'ebnf' |
+  'editorconfig' |
+  'eiffel' |
+  'ejs' |
+  'elixir' |
+  'elm' |
+  'erb' |
+  'erlang' |
+  'etlua' |
+  'excel-formula' |
+  'factor' |
+  'false' |
+  'firestore-security-rules' |
+  'flow' |
+  'fortran' |
+  'fsharp' |
+  'ftl' |
+  'gap' |
+  'gdscript' |
+  'gedcom' |
+  'gherkin' |
+  'git' |
+  'glsl' |
+  'gml' |
+  'gn' |
+  'go' |
+  'graphql' |
+  'groovy' |
+  'haml' |
+  'handlebars' |
+  'haskell' |
+  'haxe' |
+  'hcl' |
+  'hlsl' |
+  'hoon' |
+  'hpkp' |
+  'hsts' |
+  'http' |
+  'ichigojam' |
+  'icon' |
+  'icu-message-format' |
+  'idris' |
+  'iecst' |
+  'ignore' |
+  'inform7' |
+  'ini' |
+  'io' |
+  'j' |
+  'java' |
+  'javadoc' |
+  'javadoclike' |
+  'javascript' |
+  'javastacktrace' |
+  'jexl' |
+  'jolie' |
+  'jq' |
+  'js-extras' |
+  'js-templates' |
+  'jsdoc' |
+  'json' |
+  'json5' |
+  'jsonp' |
+  'jsstacktrace' |
+  'jsx' |
+  'julia' |
+  'keyman' |
+  'kotlin' |
+  'kumir' |
+  'kusto' |
+  'latex' |
+  'latte' |
+  'less' |
+  'lilypond' |
+  'liquid' |
+  'lisp' |
+  'livescript' |
+  'llvm' |
+  'log' |
+  'lua' |
+  'magma' |
+  'makefile' |
+  'markdown' |
+  'markup-templating' |
+  'markup' |
+  'matlab' |
+  'maxscript' |
+  'mel' |
+  'mermaid' |
+  'mizar' |
+  'mongodb' |
+  'monkey' |
+  'moonscript' |
+  'n1ql' |
+  'n4js' |
+  'nand2tetris-hdl' |
+  'naniscript' |
+  'nasm' |
+  'neon' |
+  'nevod' |
+  'nginx' |
+  'nim' |
+  'nix' |
+  'nsis' |
+  'objectivec' |
+  'ocaml' |
+  'opencl' |
+  'openqasm' |
+  'oz' |
+  'parigp' |
+  'parser' |
+  'pascal' |
+  'pascaligo' |
+  'pcaxis' |
+  'perl' |
+  'php-extras' |
+  'php' |
+  'phpdoc' |
+  'plsql' |
+  'powerquery' |
+  'powershell' |
+  'processing' |
+  'prolog' |
+  'promql' |
+  'properties' |
+  'protobuf' |
+  'psl' |
+  'pug' |
+  'puppet' |
+  'pure' |
+  'purebasic' |
+  'purescript' |
+  'python' |
+  'q' |
+  'qml' |
+  'qore' |
+  'qsharp' |
+  'r' |
+  'racket' |
+  'reason' |
+  'regex' |
+  'rego' |
+  'renpy' |
+  'rest' |
+  'rip' |
+  'roboconf' |
+  'robotframework' |
+  'ruby' |
+  'rust' |
+  'sas' |
+  'sass' |
+  'scala' |
+  'scheme' |
+  'scss' |
+  'shell-session' |
+  'smali' |
+  'smalltalk' |
+  'smarty' |
+  'sml' |
+  'solidity' |
+  'solution-file' |
+  'soy' |
+  'sparql' |
+  'splunk-spl' |
+  'sqf' |
+  'sql' |
+  'squirrel' |
+  'stan' |
+  'stylus' |
+  'swift' |
+  'systemd' |
+  't4-cs' |
+  't4-templating' |
+  't4-vb' |
+  'tap' |
+  'tcl' |
+  'textile' |
+  'toml' |
+  'tsx' |
+  'tt2' |
+  'turtle' |
+  'twig' |
+  'typescript' |
+  'typoscript' |
+  'unrealscript' |
+  'uri' |
+  'v' |
+  'vala' |
+  'vbnet' |
+  'velocity' |
+  'verilog' |
+  'vhdl' |
+  'vim' |
+  'visual-basic' |
+  'warpscript' |
+  'wasm' |
+  'wiki' |
+  'wolfram' |
+  'wren' |
+  'xeora' |
+  'xml-doc' |
+  'xojo' |
+  'xquery' |
+  'yaml' |
+  'yang' |
+  'zig' |
+  'plain';

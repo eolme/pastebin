@@ -31,9 +31,11 @@
     "lint": "next lint",
     "generate": "node bin/generate-languages.js",
     "optimize": "node bin/optimize-editor.js",
-    "postinstall": "run-p generate optimize"
+    "validator": "node bin/patch-validator.js",
+    "postinstall": "run-p generate optimize validator"
   },
   "dependencies": {
+    "@next-auth/typeorm-legacy-adapter": "^1.0.1",
     "ahooks": "^3.0.3",
     "better-sqlite3": "^7.4.5",
     "fast-glob": "^3.2.7",
@@ -41,6 +43,7 @@
     "module-alias": "^2.2.2",
     "nanoid": "^3.1.30",
     "next": "^12.0.7",
+    "next-auth": "^4.0.5",
     "preact": "^10.6.4",
     "preact-render-to-string": "^5.1.19",
     "preact-ssr-prepass": "^1.2.0",
@@ -51,12 +54,15 @@
     "react-simple-code-editor": "^0.11.0",
     "reflect-metadata": "^0.1.13",
     "scheduler": "^0.20.2",
-    "typeorm": "^0.2.41"
+    "typeorm": "^0.2.41",
+    "typeorm-naming-strategies": "^2.0.0",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@mntm/eslint-config": "^0.4.4",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
+    "@types/validator": "^13.7.0",
     "eslint": "^7.32.0",
     "npm-run-all": "^4.1.5",
     "typescript": "^4.5.4",

@@ -1,15 +1,17 @@
 import type { FC } from 'react';
 import type { AppProps } from 'next/app';
 
-import { Fragment } from 'react';
 import { default as NextApp } from 'next/app';
 import { default as NextHead } from 'next/head';
+import { SessionProvider } from 'next-auth/react';
 
 import '#/styles/index.css';
 
 const App: FC<AppProps> = (props) => {
+  /* eslint-disable react/destructuring-assignment */
+
   return (
-    <Fragment key="app">
+    <SessionProvider session={props.pageProps.session}>
       <NextHead>
         <meta
           key="viewport"
@@ -64,8 +66,10 @@ const App: FC<AppProps> = (props) => {
           href={process.env.NEXT_PUBLIC_HOST}
         />
       </NextHead>
-      <NextApp {...props} />
-    </Fragment>
+      <div className="page">
+        <NextApp {...props} />
+      </div>
+    </SessionProvider>
   );
 };
 

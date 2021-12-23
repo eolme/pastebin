@@ -113,15 +113,20 @@ const clone = (str) => {
     languages[dep].push(raw[dep]);
   }
 
+  const stringifyTypes = Object.keys(languages).map((lang) => '\'' + lang + '\'').join(' |\r\n  ');
+
   const stringifyLanguages = JSON.stringify(languages, null, 2);
   const stringifyOptions = JSON.stringify(options, null, 2);
 
-  const valid = wrap(imports(beautify(stringifyLanguages)));
+  const validLanguages = wrap(imports(beautify(stringifyLanguages)));
+  const validOptions = beautify(stringifyOptions);
+  const validTypes = stringifyTypes + ' |\r\n  \'plain\'';
 
   const memoize = 'import { default as memo } from \'memoize-one\';\r\n\r\n';
   const queue = 'const queue = (arr: Array<() => Promise<any>>) => {\r\n  let promise = Promise.resolve();\r\n  arr.forEach((chain) => promise = promise.then(chain));\r\n  return promise;\r\n};\r\n\r\n';
-  const code = 'export const languages: Readonly<Record<string, () => Promise<any>>> = ' + valid + ';\r\n\r\n';
-  const picker = 'export const options = ' + stringifyOptions + '\r\n';
+  const code = 'export const languages: Readonly<Record<string, () => Promise<any>>> = ' + validLanguages + ';\r\n\r\n';
+  const picker = 'export const options = ' + validOptions + ';\r\n\r\n';
+  const types = 'export type Languages =\r\n  ' + validTypes + ';\r\n';
 
-  await fs.writeFile(dest, memoize + queue + code + picker, { encoding: 'utf8' });
+  await fs.writeFile(dest, memoize + queue + code + picker + types, { encoding: 'utf8' });
 })();

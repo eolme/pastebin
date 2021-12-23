@@ -1,9 +1,15 @@
 import type { GetServerSideProps, NextApiHandler } from 'next';
 
-import { DI } from './di';
+import { DI } from '#/api/di';
 import { nanoid } from 'nanoid';
 
 export const props: GetServerSideProps = async (context) => {
+  if (!context.params) {
+    return {
+      notFound: true
+    };
+  }
+
   const name = context.params.name as string;
 
   if (!name || name.length !== 32) {
@@ -14,6 +20,7 @@ export const props: GetServerSideProps = async (context) => {
 
   const repo = await DI.code();
   const model = await repo.findOrCreate(name, {
+    owner: null,
     name,
     code: '',
     lang: 'plain'
@@ -26,6 +33,13 @@ export const props: GetServerSideProps = async (context) => {
 };
 
 export const handle: NextApiHandler = async (req, res) => {
+  if (!req.body) {
+    res.writeHead(400);
+    res.end();
+
+    return;
+  }
+
   const {
     name = '',
     code = '',
@@ -33,7 +47,7 @@ export const handle: NextApiHandler = async (req, res) => {
   } = req.body as Record<string, string>;
 
   if (name.length !== 32) {
-    res.writeHead(400);
+    res.writeHead(422);
     res.end();
 
     return;
@@ -43,7 +57,7 @@ export const handle: NextApiHandler = async (req, res) => {
   const model = await repo.update(name, {
     name,
     code,
-    lang
+    lang: () => lang
   });
 
   res.writeHead(200);
@@ -54,7 +68,8 @@ export const create: NextApiHandler = async (req, res) => {
   const name = nanoid(32);
 
   const repo = await DI.code();
-  const model = await repo.instance({
+  const model = await repo.createAndSave({
+    owner: null,
     name,
     code: '',
     lang: 'plain'

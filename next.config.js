@@ -48,6 +48,10 @@ const alias = {
 
 aliases.addAliases(alias);
 
+// Common env
+const _env = ['NODE_ENV', 'NEXTAUTH_URL', 'VERCEL', 'VERCEL_URL'];
+const isENV = (key) => key.startsWith('NEXT_PUBLIC_') || _env.includes(key);
+
 /**
  * @param {string} phase
  * @param {{ defaultConfig: import('next').NextConfig }} params
@@ -55,14 +59,16 @@ aliases.addAliases(alias);
  */
 const config = () => {
   return {
-    env: {
-      NEXT_PUBLIC_HOST: 'https://pastebin.petrov.engineer'
-    },
-    webpack(webpack) {
+    webpack(webpack, options) {
       webpack.resolve = webpack.resolve || {};
 
-      webpack.resolve.exportsFields = [];
+      // Add preact aliases
       webpack.resolve.alias = Object.assign(webpack.resolve.alias || {}, alias);
+
+      // Disable exports
+      webpack.resolve.exportsFields = [];
+
+      // Use future mainFields
       webpack.resolve.mainFields = fields;
 
       const cache =
@@ -70,10 +76,38 @@ const config = () => {
         webpack.optimization.splitChunks &&
         webpack.optimization.splitChunks.cacheGroups;
 
+      // Add preact chunk
       if (cache && cache.framework) {
         cache.preact = Object.assign({}, cache.framework, {
-          test: /[/\\]node_modules[/\\](preact|preact-render-to-string|preact-context-provider)[/\\]/
+          test: /[/\\]node_modules[/\\](preact|preact-render-to-string|react-ssr-prepass|preact-context-provider)[/\\]/
         });
+      }
+
+      if (!options.isServer) {
+        // Use future target
+        webpack.target = ['web', 'es2021'];
+
+        const DefinePlugin = webpack.plugins.find((plugin) => {
+          return plugin.constructor.name === 'DefinePlugin';
+        });
+
+        // Fix missing env
+        DefinePlugin.definitions['process.env.BABEL_ENV'] = JSON.stringify(process.env.NODE_ENV);
+        for (const key of _env) {
+          DefinePlugin.definitions[`process.env.${key}`] = JSON.stringify(process.env[key]);
+        }
+
+        // Define only safe env
+        const env = {};
+
+        for (const key in process.env) {
+          if (isENV(key)) {
+            env[key] = process.env[key];
+          }
+        }
+
+        // Rewrite env
+        DefinePlugin.definitions['process.env'] = JSON.stringify(env);
       }
 
       return webpack;
