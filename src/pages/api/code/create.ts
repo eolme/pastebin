@@ -1,3 +1,1 @@
-import { create } from '#/api/code';
-
-export default create;
+export { create as default } from '#/api/code';

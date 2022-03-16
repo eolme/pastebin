@@ -1,7 +1,7 @@
 import type { GetServerSideProps, NextApiHandler } from 'next';
 
-import { DI } from '#/api/di';
-import { nanoid } from 'nanoid';
+import { database } from '#/api/database';
+import { default as cuid } from 'cuid';
 
 export const props: GetServerSideProps = async (context) => {
   if (!context.params) {
@@ -12,19 +12,29 @@ export const props: GetServerSideProps = async (context) => {
 
   const name = context.params.name as string;
 
-  if (!name || name.length !== 32) {
+  if (!name) {
     return {
       notFound: true
     };
   }
 
-  const repo = await DI.code();
-  const model = await repo.findOrCreate(name, {
-    owner: null,
-    name,
-    code: '',
-    lang: 'plain'
+  const model = await database.code.findFirst({
+    where: {
+      name
+    },
+    select: {
+      ownerId: true,
+      name: true,
+      code: true,
+      lang: true
+    }
   });
+
+  if (model === null) {
+    return {
+      notFound: true
+    };
+  }
 
   return {
     // Props must be plain object
@@ -41,23 +51,25 @@ export const handle: NextApiHandler = async (req, res) => {
   }
 
   const {
-    name = '',
+    name = cuid(),
     code = '',
     lang = 'plain'
   } = req.body as Record<string, string>;
 
-  if (name.length !== 32) {
-    res.writeHead(422);
-    res.end();
-
-    return;
-  }
-
-  const repo = await DI.code();
-  const model = await repo.update(name, {
-    name,
-    code,
-    lang: () => lang
+  const model = await database.code.upsert({
+    create: {
+      name,
+      code,
+      lang
+    },
+    update: {
+      name,
+      code,
+      lang
+    },
+    where: {
+      name
+    }
   });
 
   res.writeHead(200);
@@ -65,14 +77,11 @@ export const handle: NextApiHandler = async (req, res) => {
 };
 
 export const create: NextApiHandler = async (req, res) => {
-  const name = nanoid(32);
-
-  const repo = await DI.code();
-  const model = await repo.createAndSave({
-    owner: null,
-    name,
-    code: '',
-    lang: 'plain'
+  const model = await database.code.create({
+    data: {
+      code: '',
+      lang: 'plain'
+    }
   });
 
   res.writeHead(201);

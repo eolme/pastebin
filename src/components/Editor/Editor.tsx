@@ -56,6 +56,13 @@ export const Editor: FC<EditorProps> = ({ code, lang }) => {
       name: router.query.name,
       lang: langRef.current,
       code: codeRef.current
+    }).then((model) => {
+      if (router.query.name !== model.name) {
+        router.replace('/code/[name]', `/code/${model.name}`, {
+          scroll: false,
+          shallow: true
+        });
+      }
     });
   });
 

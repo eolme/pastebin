@@ -14,7 +14,9 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-abnf.min.js')
   ])),
   'actionscript': memo(() => queue([
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
     () => import('prismjs/components/prism-javascript.min.js'),
     () => import('prismjs/components/prism-actionscript.min.js')
   ])),
@@ -34,6 +36,8 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-apacheconf.min.js')
   ])),
   'apex': memo(() => queue([
+    () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-sql.min.js'),
     () => import('prismjs/components/prism-apex.min.js')
   ])),
   'apl': memo(() => queue([
@@ -60,8 +64,15 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
   'asm6502': memo(() => queue([
     () => import('prismjs/components/prism-asm6502.min.js')
   ])),
+  'asmatmel': memo(() => queue([
+    () => import('prismjs/components/prism-asmatmel.min.js')
+  ])),
   'aspnet': memo(() => queue([
     () => import('prismjs/components/prism-markup.min.js'),
+    () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-csharp.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
+    () => import('prismjs/components/prism-javascript.min.js'),
     () => import('prismjs/components/prism-aspnet.min.js')
   ])),
   'autohotkey': memo(() => queue([
@@ -122,6 +133,8 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
   ])),
   'chaiscript': memo(() => queue([
     () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-c.min.js'),
+    () => import('prismjs/components/prism-cpp.min.js'),
     () => import('prismjs/components/prism-chaiscript.min.js')
   ])),
   'cil': memo(() => queue([
@@ -141,6 +154,8 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
   ])),
   'coffeescript': memo(() => queue([
     () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-javascript.min.js'),
     () => import('prismjs/components/prism-coffeescript.min.js')
   ])),
@@ -169,15 +184,20 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
   ])),
   'cshtml': memo(() => queue([
     () => import('prismjs/components/prism-markup.min.js'),
+    () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-csharp.min.js'),
     () => import('prismjs/components/prism-cshtml.min.js')
   ])),
   'csp': memo(() => queue([
     () => import('prismjs/components/prism-csp.min.js')
   ])),
   'css-extras': memo(() => queue([
+    () => import('prismjs/components/prism-markup.min.js'),
+    () => import('prismjs/components/prism-css.min.js'),
     () => import('prismjs/components/prism-css-extras.min.js')
   ])),
   'css': memo(() => queue([
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-css.min.js')
   ])),
   'csv': memo(() => queue([
@@ -216,6 +236,7 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-docker.min.js')
   ])),
   'dot': memo(() => queue([
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-dot.min.js')
   ])),
   'ebnf': memo(() => queue([
@@ -228,6 +249,10 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-eiffel.min.js')
   ])),
   'ejs': memo(() => queue([
+    () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
+    () => import('prismjs/components/prism-javascript.min.js'),
     () => import('prismjs/components/prism-ejs.min.js')
   ])),
   'elixir': memo(() => queue([
@@ -245,6 +270,7 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-erlang.min.js')
   ])),
   'etlua': memo(() => queue([
+    () => import('prismjs/components/prism-lua.min.js'),
     () => import('prismjs/components/prism-etlua.min.js')
   ])),
   'excel-formula': memo(() => queue([
@@ -262,6 +288,8 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
   ])),
   'flow': memo(() => queue([
     () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-javascript.min.js'),
     () => import('prismjs/components/prism-flow.min.js')
   ])),
@@ -302,11 +330,17 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
   'gn': memo(() => queue([
     () => import('prismjs/components/prism-gn.min.js')
   ])),
+  'go-module': memo(() => queue([
+    () => import('prismjs/components/prism-go-module.min.js')
+  ])),
   'go': memo(() => queue([
     () => import('prismjs/components/prism-clike.min.js'),
     () => import('prismjs/components/prism-go.min.js')
   ])),
   'graphql': memo(() => queue([
+    () => import('prismjs/components/prism-yaml.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
+    () => import('prismjs/components/prism-markdown.min.js'),
     () => import('prismjs/components/prism-graphql.min.js')
   ])),
   'groovy': memo(() => queue([
@@ -314,6 +348,9 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-groovy.min.js')
   ])),
   'haml': memo(() => queue([
+    () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-ruby.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-haml.min.js')
   ])),
   'handlebars': memo(() => queue([
@@ -323,6 +360,7 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-haskell.min.js')
   ])),
   'haxe': memo(() => queue([
+    () => import('prismjs/components/prism-regex.min.js'),
     () => import('prismjs/components/prism-clike.min.js'),
     () => import('prismjs/components/prism-haxe.min.js')
   ])),
@@ -344,6 +382,10 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-hsts.min.js')
   ])),
   'http': memo(() => queue([
+    () => import('prismjs/components/prism-uri.min.js'),
+    () => import('prismjs/components/prism-csp.min.js'),
+    () => import('prismjs/components/prism-hpkp.min.js'),
+    () => import('prismjs/components/prism-hsts.min.js'),
     () => import('prismjs/components/prism-http.min.js')
   ])),
   'ichigojam': memo(() => queue([
@@ -382,6 +424,9 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-java.min.js')
   ])),
   'javadoc': memo(() => queue([
+    () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-java.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-javadoclike.min.js'),
     () => import('prismjs/components/prism-javadoc.min.js')
   ])),
@@ -390,6 +435,8 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
   ])),
   'javascript': memo(() => queue([
     () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-javascript.min.js')
   ])),
   'javastacktrace': memo(() => queue([
@@ -406,12 +453,25 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-jq.min.js')
   ])),
   'js-extras': memo(() => queue([
+    () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
+    () => import('prismjs/components/prism-javascript.min.js'),
     () => import('prismjs/components/prism-js-extras.min.js')
   ])),
   'js-templates': memo(() => queue([
+    () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
+    () => import('prismjs/components/prism-javascript.min.js'),
     () => import('prismjs/components/prism-js-templates.min.js')
   ])),
   'jsdoc': memo(() => queue([
+    () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
+    () => import('prismjs/components/prism-javascript.min.js'),
+    () => import('prismjs/components/prism-typescript.min.js'),
     () => import('prismjs/components/prism-javadoclike.min.js'),
     () => import('prismjs/components/prism-jsdoc.min.js')
   ])),
@@ -431,12 +491,16 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
   ])),
   'jsx': memo(() => queue([
     () => import('prismjs/components/prism-clike.min.js'),
-    () => import('prismjs/components/prism-javascript.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
     () => import('prismjs/components/prism-markup.min.js'),
+    () => import('prismjs/components/prism-javascript.min.js'),
     () => import('prismjs/components/prism-jsx.min.js')
   ])),
   'julia': memo(() => queue([
     () => import('prismjs/components/prism-julia.min.js')
+  ])),
+  'keepalived': memo(() => queue([
+    () => import('prismjs/components/prism-keepalived.min.js')
   ])),
   'keyman': memo(() => queue([
     () => import('prismjs/components/prism-keyman.min.js')
@@ -455,14 +519,17 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-latex.min.js')
   ])),
   'latte': memo(() => queue([
+    () => import('prismjs/components/prism-php.min.js'),
     () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-latte.min.js')
   ])),
   'less': memo(() => queue([
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-css.min.js'),
     () => import('prismjs/components/prism-less.min.js')
   ])),
   'lilypond': memo(() => queue([
+    () => import('prismjs/components/prism-scheme.min.js'),
     () => import('prismjs/components/prism-lilypond.min.js')
   ])),
   'liquid': memo(() => queue([
@@ -478,6 +545,7 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-llvm.min.js')
   ])),
   'log': memo(() => queue([
+    () => import('prismjs/components/prism-javastacktrace.min.js'),
     () => import('prismjs/components/prism-log.min.js')
   ])),
   'lua': memo(() => queue([
@@ -490,14 +558,15 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-makefile.min.js')
   ])),
   'markdown': memo(() => queue([
+    () => import('prismjs/components/prism-yaml.min.js'),
     () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-markdown.min.js')
   ])),
   'markup-templating': memo(() => queue([
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-markup-templating.min.js')
   ])),
   'markup': memo(() => queue([
-    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-markup.min.js')
   ])),
   'matlab': memo(() => queue([
@@ -529,6 +598,8 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
   ])),
   'n4js': memo(() => queue([
     () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-javascript.min.js'),
     () => import('prismjs/components/prism-n4js.min.js')
   ])),
@@ -570,6 +641,7 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
   'opencl': memo(() => queue([
     () => import('prismjs/components/prism-clike.min.js'),
     () => import('prismjs/components/prism-c.min.js'),
+    () => import('prismjs/components/prism-cpp.min.js'),
     () => import('prismjs/components/prism-opencl.min.js')
   ])),
   'openqasm': memo(() => queue([
@@ -638,13 +710,18 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-psl.min.js')
   ])),
   'pug': memo(() => queue([
+    () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
+    () => import('prismjs/components/prism-javascript.min.js'),
     () => import('prismjs/components/prism-pug.min.js')
   ])),
   'puppet': memo(() => queue([
     () => import('prismjs/components/prism-puppet.min.js')
   ])),
   'pure': memo(() => queue([
-    () => import('prismjs/components/prism-pure.min.js'),
+    () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-c.min.js'),
     () => import('prismjs/components/prism-pure.min.js')
   ])),
   'purebasic': memo(() => queue([
@@ -662,6 +739,10 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-q.min.js')
   ])),
   'qml': memo(() => queue([
+    () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
+    () => import('prismjs/components/prism-javascript.min.js'),
     () => import('prismjs/components/prism-qml.min.js')
   ])),
   'qore': memo(() => queue([
@@ -712,9 +793,14 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-rust.min.js')
   ])),
   'sas': memo(() => queue([
+    () => import('prismjs/components/prism-sql.min.js'),
+    () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-groovy.min.js'),
+    () => import('prismjs/components/prism-lua.min.js'),
     () => import('prismjs/components/prism-sas.min.js')
   ])),
   'sass': memo(() => queue([
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-css.min.js'),
     () => import('prismjs/components/prism-sass.min.js')
   ])),
@@ -727,10 +813,12 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-scheme.min.js')
   ])),
   'scss': memo(() => queue([
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-css.min.js'),
     () => import('prismjs/components/prism-scss.min.js')
   ])),
   'shell-session': memo(() => queue([
+    () => import('prismjs/components/prism-bash.min.js'),
     () => import('prismjs/components/prism-shell-session.min.js')
   ])),
   'smali': memo(() => queue([
@@ -740,6 +828,7 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-smalltalk.min.js')
   ])),
   'smarty': memo(() => queue([
+    () => import('prismjs/components/prism-php.min.js'),
     () => import('prismjs/components/prism-smarty.min.js')
   ])),
   'sml': memo(() => queue([
@@ -795,6 +884,7 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-t4-vb.min.js')
   ])),
   'tap': memo(() => queue([
+    () => import('prismjs/components/prism-yaml.min.js'),
     () => import('prismjs/components/prism-tap.min.js')
   ])),
   'tcl': memo(() => queue([
@@ -802,18 +892,21 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
   ])),
   'textile': memo(() => queue([
     () => import('prismjs/components/prism-markup.min.js'),
+    () => import('prismjs/components/prism-css.min.js'),
     () => import('prismjs/components/prism-textile.min.js')
   ])),
   'toml': memo(() => queue([
     () => import('prismjs/components/prism-toml.min.js')
   ])),
+  'tremor': memo(() => queue([
+    () => import('prismjs/components/prism-tremor.min.js')
+  ])),
   'tsx': memo(() => queue([
     () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-javascript.min.js'),
     () => import('prismjs/components/prism-typescript.min.js'),
-    () => import('prismjs/components/prism-clike.min.js'),
-    () => import('prismjs/components/prism-javascript.min.js'),
-    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-jsx.min.js'),
     () => import('prismjs/components/prism-tsx.min.js')
   ])),
@@ -829,6 +922,8 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
   ])),
   'typescript': memo(() => queue([
     () => import('prismjs/components/prism-clike.min.js'),
+    () => import('prismjs/components/prism-regex.min.js'),
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-javascript.min.js'),
     () => import('prismjs/components/prism-typescript.min.js')
   ])),
@@ -838,6 +933,9 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
   'unrealscript': memo(() => queue([
     () => import('prismjs/components/prism-unrealscript.min.js')
   ])),
+  'uorazor': memo(() => queue([
+    () => import('prismjs/components/prism-uorazor.min.js')
+  ])),
   'uri': memo(() => queue([
     () => import('prismjs/components/prism-uri.min.js')
   ])),
@@ -846,6 +944,7 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-v.min.js')
   ])),
   'vala': memo(() => queue([
+    () => import('prismjs/components/prism-regex.min.js'),
     () => import('prismjs/components/prism-clike.min.js'),
     () => import('prismjs/components/prism-vala.min.js')
   ])),
@@ -875,6 +974,9 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
   'wasm': memo(() => queue([
     () => import('prismjs/components/prism-wasm.min.js')
   ])),
+  'web-idl': memo(() => queue([
+    () => import('prismjs/components/prism-web-idl.min.js')
+  ])),
   'wiki': memo(() => queue([
     () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-wiki.min.js')
@@ -890,6 +992,7 @@ export const languages: Readonly<Record<string, () => Promise<any>>> = {
     () => import('prismjs/components/prism-xeora.min.js')
   ])),
   'xml-doc': memo(() => queue([
+    () => import('prismjs/components/prism-markup.min.js'),
     () => import('prismjs/components/prism-xml-doc.min.js')
   ])),
   'xojo': memo(() => queue([
@@ -978,6 +1081,10 @@ export const options = [
   {
     'name': 'asm6502',
     'value': 'asm6502'
+  },
+  {
+    'name': 'asmatmel',
+    'value': 'asmatmel'
   },
   {
     'name': 'aspnet',
@@ -1268,6 +1375,10 @@ export const options = [
     'value': 'gn'
   },
   {
+    'name': 'go-module',
+    'value': 'go-module'
+  },
+  {
     'name': 'go',
     'value': 'go'
   },
@@ -1426,6 +1537,10 @@ export const options = [
   {
     'name': 'julia',
     'value': 'julia'
+  },
+  {
+    'name': 'keepalived',
+    'value': 'keepalived'
   },
   {
     'name': 'keyman',
@@ -1876,6 +1991,10 @@ export const options = [
     'value': 'toml'
   },
   {
+    'name': 'tremor',
+    'value': 'tremor'
+  },
+  {
     'name': 'tsx',
     'value': 'tsx'
   },
@@ -1902,6 +2021,10 @@ export const options = [
   {
     'name': 'unrealscript',
     'value': 'unrealscript'
+  },
+  {
+    'name': 'uorazor',
+    'value': 'uorazor'
   },
   {
     'name': 'uri',
@@ -1946,6 +2069,10 @@ export const options = [
   {
     'name': 'wasm',
     'value': 'wasm'
+  },
+  {
+    'name': 'web-idl',
+    'value': 'web-idl'
   },
   {
     'name': 'wiki',
@@ -2006,6 +2133,7 @@ export type Languages =
   'arff' |
   'asciidoc' |
   'asm6502' |
+  'asmatmel' |
   'aspnet' |
   'autohotkey' |
   'autoit' |
@@ -2078,6 +2206,7 @@ export type Languages =
   'glsl' |
   'gml' |
   'gn' |
+  'go-module' |
   'go' |
   'graphql' |
   'groovy' |
@@ -2118,6 +2247,7 @@ export type Languages =
   'jsstacktrace' |
   'jsx' |
   'julia' |
+  'keepalived' |
   'keyman' |
   'kotlin' |
   'kumir' |
@@ -2230,6 +2360,7 @@ export type Languages =
   'tcl' |
   'textile' |
   'toml' |
+  'tremor' |
   'tsx' |
   'tt2' |
   'turtle' |
@@ -2237,6 +2368,7 @@ export type Languages =
   'typescript' |
   'typoscript' |
   'unrealscript' |
+  'uorazor' |
   'uri' |
   'v' |
   'vala' |
@@ -2248,6 +2380,7 @@ export type Languages =
   'visual-basic' |
   'warpscript' |
   'wasm' |
+  'web-idl' |
   'wiki' |
   'wolfram' |
   'wren' |

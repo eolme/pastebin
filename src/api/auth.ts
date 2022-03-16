@@ -5,18 +5,15 @@ import { default as VK } from 'next-auth/providers/vk';
 import { default as Github } from 'next-auth/providers/github';
 import { default as Credentials } from 'next-auth/providers/credentials';
 
-import { TypeORMLegacyAdapter as adapter } from '@next-auth/typeorm-legacy-adapter';
+import { PrismaAdapter } from '@next-auth/prisma-adapter';
 
-import { options } from '#/api/database';
+import { database } from '#/api/database';
 import { auth } from '#/api/user';
 
 import { getCsrfToken, getProviders, getSession } from 'next-auth/react';
 
 export const handler = Auth({
-  adapter: adapter(options, {
-    // @ts-expect-error Custom entities
-    entities: options.entities
-  }),
+  adapter: PrismaAdapter(database),
   debug: process.env.NODE_ENV === 'development',
   secret: process.env.JWT_KEY,
   session: {
@@ -40,12 +37,9 @@ export const handler = Auth({
         name: {},
         password: {}
       },
-
-      // @ts-expect-error Custom auth
       authorize: auth
     })
   ],
-
   pages: {
     signIn: '/auth',
     signOut: '/auth/clear',

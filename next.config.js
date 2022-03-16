@@ -1,7 +1,4 @@
-/* eslint-disable @typescript-eslint/no-require-imports,@typescript-eslint/no-var-requires */
-
-const aliases = require('module-alias');
-const path = require('path');
+import { resolve } from 'path';
 
 const fields = [
   // Non-standard esm
@@ -37,7 +34,7 @@ const fields = [
   'unpkg'
 ];
 
-const npm = (name) => path.resolve('node_modules', name);
+const npm = (name) => resolve('node_modules', name);
 
 const alias = {
   'react': npm('preact/compat'),
@@ -46,10 +43,8 @@ const alias = {
   'react-render-to-string': npm('preact-render-to-string')
 };
 
-aliases.addAliases(alias);
-
 // Common env
-const _env = ['NODE_ENV', 'NEXTAUTH_URL', 'VERCEL', 'VERCEL_URL'];
+const _env = ['NODE_ENV', 'BABEL_ENV', 'NEXTAUTH_URL', 'VERCEL', 'VERCEL_URL'];
 const isENV = (key) => key.startsWith('NEXT_PUBLIC_') || _env.includes(key);
 
 /**
@@ -116,14 +111,9 @@ const config = () => {
     swcMinify: true,
     experimental: {
       fullySpecified: false,
-      styledComponents: false,
-      urlImports: false,
-      serverComponents: false,
-      reactRoot: false,
-      concurrentFeatures: false,
       esmExternals: true
     }
   };
 };
 
-module.exports = config;
+export { config };

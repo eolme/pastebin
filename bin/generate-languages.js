@@ -19,24 +19,38 @@ const wrap = (str) => str.replace(/:\s(\[[\s\S]*?\])/gm, ': memo(() => queue($1)
 
 /**
  * @param {string} str
+ * @param {RegExp} regex
+ */
+const regexAll = (str, regex) => {
+  return Array.from(str.matchAll(regex)).map((arr) => (arr && arr[1]) || null);
+}
+
+/**
+ * @param {string} str
  */
 const peer = (str) => {
-  const exec = /\w+\.languages\.extend\(['"`](\w+)['"`]/.exec(str);
-  if (exec && exec[1]) {
-    return exec[1];
-  }
-  return null;
+  return regexAll(str, /\w+\.languages\.extend\(['"`](\w+)['"`]/g);
 };
 
 /**
  * @param {string} str
  */
 const clone = (str) => {
-  const exec = /\w+\.util\.clone\(\w+\.languages\.(\w+)/.exec(str);
-  if (exec && exec[1]) {
-    return exec[1];
-  }
-  return null;
+  return regexAll(str, /\w+\.util\.clone\(\w+\.languages\.(\w+)/g);
+};
+
+/**
+ * @param {string} str
+ */
+const inherit = (str) => {
+  return regexAll(str, /\w+\.languages\.(?!extend|(?:\w+\s*=))(\w+)/g);
+};
+
+/**
+ * @param {any[]} arr
+ */
+const unique = (arr) => {
+  return Array.from(new Set(arr.filter((item) => !!item)));
 };
 
 (async () => {
@@ -71,8 +85,9 @@ const clone = (str) => {
     const name = exec[1];
 
     deps[name] = [
-      clone(content),
-      peer(content)
+      ...inherit(content),
+      ...clone(content),
+      ...peer(content)
     ];
 
     raw[name] = lang.replace(base, '');
@@ -111,6 +126,10 @@ const clone = (str) => {
     }
 
     languages[dep].push(raw[dep]);
+  }
+
+  for (const lang in languages) {
+    languages[lang] = unique(languages[lang]);
   }
 
   const stringifyTypes = Object.keys(languages).map((lang) => '\'' + lang + '\'').join(' |\r\n  ');

@@ -1,3 +1,1 @@
-import { handle } from '#/api/code';
-
-export default handle;
+export { handle as default } from '#/api/code';

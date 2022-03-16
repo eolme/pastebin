@@ -1,3 +1,1 @@
-import { handler } from '#/api/auth';
-
-export default handler;
+export { handler as default } from '#/api/auth';

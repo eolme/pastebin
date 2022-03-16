@@ -1,4 +1,4 @@
-import { default as isEmail } from 'validator/es/lib/isEmail';
+import { default as isEmail } from 'validator/lib/isEmail';
 
 export const validString = (str: unknown): string | null => {
   if (typeof str !== 'string') {

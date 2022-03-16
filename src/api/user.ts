@@ -1,6 +1,6 @@
 import type { GetServerSideProps } from 'next';
 
-import { DI } from '#/api/di';
+import { database } from '#/api/database';
 import { getSession } from 'next-auth/react';
 import { validEmail, validString } from '#/utils/validate';
 
@@ -23,36 +23,34 @@ export const auth = async (credentials: AuthCredentials) => {
   const name = validString(credentials.name);
 
   if (name === null) {
-    throw new Error('name null');
+    return null;
   }
 
   const password = validString(credentials.password);
 
   if (password === null) {
-    throw new Error('password null');
+    return null;
   }
 
   const email = validEmail(name);
   const query = email === null ? 'name' : 'email';
 
-  const repo = await DI.user();
-
-  const user = await repo.findOne({
+  const user = await database.user.upsert({
+    create: {
+      [query]: name,
+      password
+    },
+    update: {
+      [query]: name
+    },
     where: {
       [query]: name
     }
   });
 
-  if (user == null) {
-    return repo.createAndSave({
-      [query]: name,
-      password
-    });
-  }
-
   if (user.password === password) {
     return user;
   }
 
-  throw new Error('not found');
+  return null;
 };
