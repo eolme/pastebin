@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
-import type { CodeModel } from '#/api/entities/code';
+import type { Code } from '@prisma/client';
 
 import { useState } from 'react';
 
 import { Editor, Picker } from '#/components';
 
-const Name: NextPage<CodeModel> = ({ code, lang: _lang }) => {
+const Name: NextPage<Code> = ({ code, lang: _lang }) => {
   const [lang, handleLang] = useState<string>(_lang);
 
   return (

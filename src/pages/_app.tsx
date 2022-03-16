@@ -21,22 +21,7 @@ const App: FC<AppProps> = (props) => {
         <meta
           key="telephone"
           name="format-detection"
-          content="telephone=no"
-        />
-        <meta
-          key="date"
-          name="format-detection"
-          content="date=no"
-        />
-        <meta
-          key="address"
-          name="format-detection"
-          content="address=no"
-        />
-        <meta
-          key="email"
-          name="format-detection"
-          content="email=no"
+          content="telephone=no,date=no,address=no,email=no"
         />
         <meta
           key="referrer"
